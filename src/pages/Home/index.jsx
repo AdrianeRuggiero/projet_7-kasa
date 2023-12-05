@@ -1,9 +1,17 @@
+import Header from '../../components/Header'
+import Banner from '../../components/Banner'
+import Gallery from '../../components/Gallery'
+import Footer from '../../components/Footer'
+
 function Home() {
-    return (
-      <div>
-        <h1>Home</h1>
-      </div>
-    )
-  }
+	return (
+		<div className='home'>
+			<Header />
+			<Banner />
+      		<Gallery />
+			<Footer />
+		</div>
+	)
+}
   
   export default Home
