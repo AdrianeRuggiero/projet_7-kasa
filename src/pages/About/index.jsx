@@ -4,6 +4,7 @@ import Banner from '../../components/Banner';
 import Collapse from '../../components/Collapse';
 import Footer from '../../components/Footer';
 import aboutDatas from '../../data/about';
+import IMG from '../../assets/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png'
 
 function About() {
     function renderCollapseItems(){
@@ -17,7 +18,7 @@ function About() {
     return (
         <div>
             <Header />
-            <Banner />
+            <Banner image={IMG} texte=""/>
             <div className='about_main'>
                 {renderCollapseItems()}
             </div>

@@ -1,25 +1,15 @@
 import './banner.scss'
-import { useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
-function Banner() {
 
-	const [aboutPage, setAboutPage] = useState(false);
-	const location = useLocation();
-
-	
-	useEffect(() => {
-		if(location.pathname === '/about'){
-			setAboutPage(true)
-		};
-		// eslint-disable-next-line
-	}, [])
-
-	return (
-		<section className={aboutPage ? 'banner_about' : 'banner'}>
-			{!aboutPage && <p>Chez vous, partout et ailleurs</p>}
-		</section>
-	)
+function Banner({image, texte}) {
+    return(
+        <div className="banner">
+            <img className="banner_img" src={image} alt="Banner"/>
+            <div className="banner_sombre"></div>
+            <span className="banner_txt">{texte}</span>
+        </div>
+    );
 }
+
 
 export default Banner

@@ -1,7 +1,7 @@
 import './footer.scss'
-import logo from '../../assets/LOGO.png'
+import logo from '../../assets/LOGO-footer.png'
 
-export default function Footer() {
+function Footer() {
    
     const dateYear = new Date().getFullYear();
 	return (
@@ -11,3 +11,5 @@ export default function Footer() {
 		</footer>
 	)
 }
+
+export default Footer

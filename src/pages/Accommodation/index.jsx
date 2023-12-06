@@ -10,25 +10,25 @@ import whiteStar from '../../assets/white-star.png';
 import redStar from '../../assets/red_star.png';
 
 
-function Accomodation() {
+function Accommodation() {
   const [imageSlideShow, setImageSLideShow] = useState([]);
   const { id } = useParams();
-  const dataCurrentAccomodation = logements.find(logement => logement.id === id);
+  const dataCurrentAccommodation = logements.find(logement => logement.id === id);
 
   useEffect(() => {
-      if (dataCurrentAccomodation) {
-          setImageSLideShow(dataCurrentAccomodation.pictures || []);
+      if (dataCurrentAccommodation) {
+          setImageSLideShow(dataCurrentAccommodation.pictures || []);
       }
-  }, [dataCurrentAccomodation]);
+  }, [dataCurrentAccommodation]);
 
   const renderTags = () => {
-      return dataCurrentAccomodation?.tags?.map((tag, index) => (
+      return dataCurrentAccommodation?.tags?.map((tag, index) => (
           <button key={index}>{tag}</button>
       ));
   };
 
   const renderStars = () => {
-      const rating = dataCurrentAccomodation?.rating || 0;
+      const rating = dataCurrentAccommodation?.rating || 0;
       return [...Array(5)].map((star, index) => {
           const ratingValue = index + 1;
           return (
@@ -37,7 +37,7 @@ function Accomodation() {
       });
   };
 
-  if (!dataCurrentAccomodation) {
+  if (!dataCurrentAccommodation) {
     return <Navigate to="*" />;
 }
 
@@ -46,32 +46,32 @@ function Accomodation() {
       <>
           <Header />
           <Slideshow imageSlideShow={imageSlideShow} />
-          <div className="accomodation">
-              <div className="accomodation_content">
-                  <div className="accomodation_content_infos">
-                      <h1>{dataCurrentAccomodation?.title}</h1>
-                      <p>{dataCurrentAccomodation?.location}</p>
+          <div className="accommodation">
+              <div className="accommodation_content">
+                  <div className="accommodation_content_infos">
+                      <h1>{dataCurrentAccommodation?.title}</h1>
+                      <p>{dataCurrentAccommodation?.location}</p>
                       <div>{renderTags()}</div>
                   </div>
-                  <div className="accomodation_content_host">
+                  <div className="accommodation_content_host">
                       <div>
-                          <div className='accomodation_content_host_name'>
-                              <span>{dataCurrentAccomodation?.host?.name?.split(' ')[0]}</span>
-                              <span>{dataCurrentAccomodation?.host?.name?.split(' ')[1]}</span>
+                          <div className='accommodation_content_host_name'>
+                              <span>{dataCurrentAccommodation?.host?.name?.split(' ')[0]}</span>
+                              <span>{dataCurrentAccommodation?.host?.name?.split(' ')[1]}</span>
                           </div>
-                          <img src={dataCurrentAccomodation?.host?.picture} alt="host" />
+                          <img src={dataCurrentAccommodation?.host?.picture} alt="host" />
                       </div>
-                      <div className="accomodation_content_host_stars">
+                      <div className="accommodation_content_host_stars">
                           {renderStars()}
                       </div>
                   </div>
               </div>
-              <div className="accomodation_collapse">
-                  <div className="accomodation_collapse_item">
-                      <Collapse title={'Description'} content={dataCurrentAccomodation?.description} />
+              <div className="accommodation_collapse">
+                  <div className="accommodation_collapse_item">
+                      <Collapse title={'Description'} content={dataCurrentAccommodation?.description} />
                   </div>
-                  <div className="accomodation_collapse_item">
-                      <Collapse title={'Équipements'} content={dataCurrentAccomodation?.equipments} />
+                  <div className="accommodation_collapse_item">
+                      <Collapse title={'Équipements'} content={dataCurrentAccommodation?.equipments} />
                   </div>
               </div>
           </div>
@@ -80,4 +80,4 @@ function Accomodation() {
   );
 }
 
-export default Accomodation;
+export default Accommodation;
