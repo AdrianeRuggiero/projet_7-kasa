@@ -6,6 +6,7 @@ function Gallery() {
 
     return (
         <div className='home_gallery'>
+         {/* Mapping through logements array to render Card components */}
             {logements.map(logement => {
                 return (
                     <Card

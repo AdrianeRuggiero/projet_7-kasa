@@ -4,7 +4,9 @@ import '../Header/header.scss'
 
 
 
-export default function Header() {
+function Header() {
+
+    // Getting the current route from the window's location pathname
     const currentRoute = window.location.pathname;
 
 	return (
@@ -29,3 +31,5 @@ export default function Header() {
 		</header>
 	)
 }
+
+export default Header

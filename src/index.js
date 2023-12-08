@@ -1,12 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home/'
-import About from './pages/About/'
-import Error from './pages/Error/'
-import Accommodation from './pages/Accommodation/'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import Home from './pages/Home/';
+import About from './pages/About/';
+import Error from './pages/Error/';
+import Accommodation from './pages/Accommodation/';
 
-ReactDOM.render(
+// Use createRoot to create a root entry point
+const root = createRoot(document.getElementById('root'));
+
+// Define your app structure within createRoot().render()
+root.render(
   <React.StrictMode>
     <Router>
       <Routes>
@@ -16,7 +20,6 @@ ReactDOM.render(
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+  </React.StrictMode>
+);
 

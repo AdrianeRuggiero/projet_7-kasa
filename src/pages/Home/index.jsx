@@ -8,7 +8,7 @@ function Home() {
 	return (
 		<div className='home'>
 			<Header />
-			<Banner image={IMG} texte="Chez vous, partout et ailleurs"/>
+			<Banner image={IMG} texte="Chez vous, partout et ailleurs" banner='home-banner'/>
       		<Gallery />
 			<Footer />
 		</div>
